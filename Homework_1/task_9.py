@@ -11,8 +11,13 @@
 
 print('Введите 3 разных числа через пробел ')
 a, b, c = map(int, input().split(' '))
-if a > b and a < c: print(f'Среднее число {a}')
-elif a > c and a < b: print(f'Среднее число {a}')
-elif b > a and b < c: print(f'Среднее число {b}')
-elif b > c and b < a: print(f'Среднее число {b}')
-else: print(f'Среднее число {c}')
+if c > a > b:
+    print(f'Среднее число {a}')
+elif b > a > c:
+    print(f'Среднее число {a}')
+elif c > b > a:
+    print(f'Среднее число {b}')
+elif a > b > c:
+    print(f'Среднее число {b}')
+else:
+    print(f'Среднее число {c}')
