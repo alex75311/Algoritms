@@ -4,8 +4,8 @@
 
 
 x = 32
+k = 0
 while x < 127:
-    k = 0
     while k < 10:
         print(f'{x}={chr(x)} ', end='')
         k += 1
