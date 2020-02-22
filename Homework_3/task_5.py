@@ -10,13 +10,13 @@ SIZE = 20
 MIN_ITEM = -100
 MAX_ITEM = 100
 
-res = []
 arr = [randint(MIN_ITEM, MAX_ITEM) for _ in range(SIZE)]
 print('Исходный массив')
 print(arr)
-[res.append(el) for el in arr if el < 0]
-result = res[0]
-for el in res:
+res = {i: el for i, el in enumerate(arr) if el < 0}
+result = MIN_ITEM
+for i, el in res.items():
     if result < el:
         result = el
-print(result)
+        result_i = i
+print(f'Максимальный отрицательный элемент находится под индексом {result_i} равен {result}')
