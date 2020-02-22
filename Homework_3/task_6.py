@@ -22,9 +22,9 @@ for i, el in enumerate(arr):
     if max_el < el:
         max_el = el
         max_i = i
-print('Полученный массив')
 if min_i > max_i:
     min_i, max_i = max_i, min_i
+print('Полученный массив')
 print(arr[min_i+1:max_i])
 for i in range(min_i+1, max_i):
     summ += arr[i]
