@@ -10,20 +10,19 @@ while True:
     num1 = int(input('Введите первое число '))
     ch = input('Введите знак (для выхода введите 0) ')
     num2 = int(input('Введите второе число '))
-    if ch != '0':
-        if ch == '-':
-            result = num1 - num2
-            print(f'{num1} {ch} {num2} = {result}')
-        elif ch == '+':
-            result = num1 + num2
-            print(f'{num1} {ch} {num2} = {result}')
-        elif ch == '*':
-            result = num1 * num2
-            print(f'{num1} {ch} {num2} = {result}')
-        elif ch == '/' and num2 != 0:
-            result = num1 / num2
-            print(f'{num1} {ch} {num2} = {result}')
+    if ch in {'+', '-', '*', '/', '0'}:
+        if ch != '0':
+            if ch == '-':
+                print(f'{num1} {ch} {num2} = {num1 - num2}')
+            elif ch == '+':
+                print(f'{num1} {ch} {num2} = {num1 + num2}')
+            elif ch == '*':
+                print(f'{num1} {ch} {num2} = {num1 * num2}')
+            elif ch == '/' and num2 != 0:
+                print(f'{num1} {ch} {num2} = {num1 / num2}')
+            else:
+                print('Делить на 0 нельзя')
         else:
-            print('Делить на 0 нельзя')
+            break
     else:
-        break
+        print('Введен некорректный знак операции')
