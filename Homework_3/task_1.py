@@ -14,3 +14,9 @@ for el in range(2, 100):
 
 for i, el in res.items():
     print(f'Количество кратных {i} равно {el}')
+
+print('Вариант 2')
+res = {}
+for i in range(2, 10):
+    res[i] = 99 // i
+    print(f'Количество кратных {i} равно {res[i]}')
