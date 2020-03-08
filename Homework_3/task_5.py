@@ -14,7 +14,7 @@ arr = [randint(MIN_ITEM, MAX_ITEM) for _ in range(SIZE)]
 print('Исходный массив')
 print(arr)
 res = {i: el for i, el in enumerate(arr) if el < 0}
-result = MIN_ITEM
+result = float('-inf')
 for i, el in res.items():
     if result < el:
         result = el

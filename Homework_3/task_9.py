@@ -15,10 +15,10 @@ for i in range(SIZE_Y):
     print(arr[i], end='')
     print()
 
-max_ = MIN_ITEM
+max_ = float('-inf')
 res_arr = []
 for y in range(SIZE_X):
-    min_ = MAX_ITEM
+    min_ = float('inf')
     for x in range(SIZE_Y):
         if min_ > arr[x][y]:
             min_ = arr[x][y]
