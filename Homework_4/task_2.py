@@ -24,7 +24,7 @@ def sieve(k):
         if len(lst) == k:
             return lst[-1]
     n *= 5
-    sieve(k)
+    return sieve(k)
 
 
 def prime(k):
