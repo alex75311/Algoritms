@@ -5,7 +5,6 @@
 import collections
 
 n = int(input('Введите количество компаний '))
-sum_all = 0
 company = collections.Counter()
 for i in range(n):
     sum_ = 0
@@ -13,9 +12,8 @@ for i in range(n):
     for j in range(4):
         sum_ += int(input(f'Введите прибыль за {j + 1} квартал '))
     company[name] = sum_
-    sum_all += sum_
 
-avg = sum_all / n
+avg = sum(company.values()) / n
 high = collections.deque()
 low = collections.deque()
 for el in company:
