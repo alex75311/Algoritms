@@ -15,11 +15,8 @@ num2 = input('Введите второе число ').upper()
 
 
 def check_hex_num(spam):
-    if spam > 15:
-        spam -= 16
-        mem = 1
-    else:
-        mem = 0
+    mem = spam // 16
+    spam %= 16
     return spam, mem
 
 
