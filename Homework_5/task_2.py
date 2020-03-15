@@ -51,7 +51,6 @@ def hex_multiplication(num1, num2):
     num1.reverse()
     for i in range(len(num1)):
         multiplier += hex_list.index(num1[i]) * 16 ** i
-    num1.reverse()
     for _ in range(multiplier):
         res = hex_sum(res, num2)
     if not res:
