@@ -14,6 +14,15 @@ num1 = input('Введите первое число ').upper()
 num2 = input('Введите второе число ').upper()
 
 
+def check_hex_num(spam):
+    if spam > 15:
+        spam -= 16
+        mem = 1
+    else:
+        mem = 0
+    return spam, mem
+
+
 def hex_sum(num1, num2):
     mem = 0
     num1 = collections.deque(num1)
@@ -26,20 +35,10 @@ def hex_sum(num1, num2):
     for i in range(len(num1)):
         if i < len(num2):
             spam = hex_list.index(num1[i]) + hex_list.index(num2[i]) + mem
-            if spam > 15:
-                spam -= 16
-                mem = 1
-            else:
-                mem = 0
-            res.appendleft(hex_list[spam])
         else:
             spam = hex_list.index(num1[i]) + mem
-            if spam > 15:
-                spam -= 16
-                mem = 1
-            else:
-                mem = 0
-            res.appendleft(hex_list[spam])
+        spam, mem = check_hex_num(spam)
+        res.appendleft(hex_list[spam])
     if mem == 1:
         res.appendleft('1')
     return ''.join(list(res))
