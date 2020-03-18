@@ -3,14 +3,15 @@
 # Первый — с помощью алгоритма «Решето Эратосфена».
 # Второй — без использования «Решета Эратосфена».
 
+import math
 from timeit import timeit
 import cProfile
 
-n = 100
+MULTIPLIER = 1.3
 
 
 def sieve(k):
-    global n
+    n = int(k * math.log(k) * MULTIPLIER) if k > 10 else 30
     a = [i for i in range(n + 1)]
     a[1] = 0
     lst = []
@@ -28,6 +29,7 @@ def sieve(k):
 
 
 def prime(k):
+    n = int(k * math.log(k) * MULTIPLIER) if k > 10 else 30
     lst = []
     for i in range(2, n + 1):
         for j in range(2, i):
@@ -47,7 +49,7 @@ print(timeit('sieve(100)', number=100, globals=globals()))  # 0.040964150
 print(timeit('sieve(200)', number=100, globals=globals()))  # 0.055681603
 print(timeit('sieve(400)', number=100, globals=globals()))  # 0.223352655
 print(timeit('sieve(800)', number=100, globals=globals()))  # 0.30342736
-
+print()
 print(timeit('prime(100)', number=100, globals=globals()))  # 0.122445056
 print(timeit('prime(200)', number=100, globals=globals()))  # 0.584289209
 print(timeit('prime(400)', number=100, globals=globals()))  # 2.815240362
