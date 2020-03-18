@@ -12,6 +12,7 @@
 
 import sys
 import math
+import timeit
 
 
 def show(obj):
@@ -43,7 +44,7 @@ def prime_1(num):
                 break
         else:
             count += 1
-    print(current_prime)
+    # print(current_prime)
     return vars()
 
 
@@ -57,7 +58,7 @@ def prime_2(num):
         if array[i]:
             count += 1
             if count == num:
-                print(i)
+                # print(i)
                 return vars()
             for j in range(i ** 2, size, i):
                 array[j] = False
@@ -87,11 +88,12 @@ def prime_3(num):
                 array[j] = 0
                 j += i
     res = [i for i in array if i != 0]
-    print(res[num - 1])
+    # print(res[num - 1])
     return vars()
 
 
 num = 5000
+print(timeit.timeit('prime_1(num)', number=100, globals=globals()))
 show(prime_1(num))
 print()
 # Память, занятая ссылками на переменные = 122
@@ -99,6 +101,7 @@ print()
 # Память, занятая функцией = 136
 # Всего занято памяти: 316
 
+print(timeit.timeit('prime_2(num)', number=100, globals=globals()))
 show(prime_2(num))
 print()
 # Память, занятая ссылками на переменные = 204
@@ -106,6 +109,7 @@ print()
 # Память, занятая функцией = 204
 # Всего занято памяти: 229180
 
+print(timeit.timeit('prime_3(num)', number=100, globals=globals()))
 show(prime_3(num))
 # Память, занятая ссылками на переменные = 227
 # Память, занятая значениями переменных = 451446
@@ -113,7 +117,8 @@ show(prime_3(num))
 # Всего занято памяти: 451877
 
 # Вывод: первый способ без использования Решета Эратосфена самый медленный, но и самый экономичный по памяти,
-# последний самый быстрый, но и самый прожорливый.
+# последний самый прожорливый, но при этом не самый быстрый.
+# Самый быстрый и средний по использованию памяти вариант 2
 
 # Python 3.7.4 (tags/v3.7.4:e09359112e, Jul  8 2019, 19:29:22) [MSC v.1916 32 bit (Intel)] on win32
 # Win7 64bit
