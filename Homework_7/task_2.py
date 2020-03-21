@@ -24,12 +24,10 @@ def merge(left, right):
         else:
             result.append(right[j])
             j += 1
-    while i < len(left):
-        result.append(left[i])
-        i += 1
-    while j < len(right):
-        result.append(right[j])
-        j += 1
+    if i == len(left):
+        result.extend(right[j:])
+    else:
+        result.extend(left[i:])
     return result
 
 
