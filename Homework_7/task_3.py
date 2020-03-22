@@ -19,9 +19,8 @@ def median(arr):
                     right += 1
                 else:
                     center += 1
-        if left == right or left + center == right or left == right + center:
-            return arr[i]
-        elif center - (abs(m - left) + abs(m - right)) == 0:
+        if left == right or left + center == right or left == right + center or center - (
+                abs(m - left) + abs(m - right)) == 0:
             return arr[i]
 
 
