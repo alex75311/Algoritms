@@ -1,7 +1,7 @@
 # Отсортируйте по возрастанию методом слияния одномерный вещественный массив, заданный случайными числами на промежутке
 # [0; 50). Выведите на экран исходный и отсортированный массивы.
 
-from random import randint
+from random import random
 
 
 def merge_sort(arr):
@@ -31,5 +31,5 @@ def merge(left, right):
     return result
 
 
-array = [randint(0, 499) / 10 for _ in range(10)]
+array = [random() * 50 for _ in range(10)]
 print(f'Исходный массив {array} \nОтсортированный массив {merge_sort(array)}')
