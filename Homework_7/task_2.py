@@ -31,5 +31,5 @@ def merge(left, right):
     return result
 
 
-array = [randint(0, 49) for _ in range(10)]
+array = [randint(0, 499) / 10 for _ in range(10)]
 print(f'Исходный массив {array} \nОтсортированный массив {merge_sort(array)}')
