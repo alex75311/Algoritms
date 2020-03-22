@@ -11,10 +11,15 @@ from random import randint
 def bubble_sort(array):
     stop = len(array) - 1
     while stop > 0:
+        trigger = True
         for i in range(stop):
             if array[i] < array[i + 1]:
                 array[i], array[i + 1] = array[i + 1], array[i]
+                trigger = False
         stop -= 1
+        print(array, trigger)
+        if trigger:
+            break
     return array
 
 
