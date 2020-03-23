@@ -17,7 +17,6 @@ def bubble_sort(array):
                 array[i], array[i + 1] = array[i + 1], array[i]
                 trigger = False
         stop -= 1
-        print(array, trigger)
         if trigger:
             break
     return array
