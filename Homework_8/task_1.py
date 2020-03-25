@@ -14,18 +14,13 @@ s = input('Введите строку: ')
 
 
 def substrings_counter(s):
-    hash_list = []
+    hash_list = set()
     count = 0
     for i in range(len(s)):
         for j in range(i + 1, len(s) + 1):
             if s[i:j] != '' and s[i:j] != s:
-                hash_list.append(hashlib.sha1(s[i:j].encode('utf-8')).hexdigest())
-                count += 1
-
-    for i in range(len(hash_list) - 1):
-        for j in range(i + 1, len(hash_list)):
-            if hash_list[i] == hash_list[j]:
-                count -= 1
+                hash_list.add(hashlib.sha1(s[i:j].encode('utf-8')).hexdigest())
+                count = len(hash_list)
 
     print(f'Сумма подстрок: {count}')
 
